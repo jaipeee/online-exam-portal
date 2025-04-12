@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+/* AdminLogin-specific wrapper */
+.adminLoginBody {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(-45deg, #ffdc9a, #157f4e, #fad0c4, #1e889b);
+  background-size: 400% 400%;
+  animation: gradientBG 9s ease infinite;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  display: flex;
+}
+
+/* Background Animation */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.adminContainer {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  padding: 40px;
+  width: 400px;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Heading Box */
+.adminHeadingBox h1 {
+  font-size: 26px;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+/* Input Box Styling */
+.adminInputBox {
+  position: relative;
+  margin: 25px 0;
+}
+
+.adminInputBox input {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  border-bottom: 2px solid #fff;
+  transition: 0.3s ease-in-out;
+}
+
+.adminInputBox label {
+  display: block;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 16px;
+  margin-bottom: 5px;
+}
+
+.adminInputBox input:focus {
+  border-bottom: 2px solid #ff4b2b;
+}
+
+/* Login Button */
+.adminLoginBtn {
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(45deg, #ff416c, #ff4b2b);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+.adminLoginBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.6);
+}
+.goBackBtn {
+  display: block;
+  margin-top: 15px;
+  text-align: center;
+  color: #2e6da4;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.goBackBtn:hover {
+  text-decoration: underline;
+}

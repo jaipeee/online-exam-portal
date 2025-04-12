@@ -1,0 +1,16 @@
+.subject-container {
+    height: 100vh; /* Full viewport height */
+    overflow-y: auto; /* Enable scrolling if content overflows */
+    
+    padding: 200px;
+    background-color: #f8f9fa; /* Light background for better visibility */
+    box-sizing: border-box;
+
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+}
+.subject-content{
+    padding-left:200px;
+    
+}

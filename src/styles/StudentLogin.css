@@ -71,3 +71,32 @@ button:hover {
   margin-left: 20px;
   padding: 100px;
 }
+@media (max-width: 768px) {
+  .student-login-container {
+    align-items: center;
+    padding: 20px;
+    height: auto;
+  }
+
+  .form-container {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+
+  .left-side, .right-side {
+    width: 100%;
+    margin: 10px 0;
+    padding: 20px;
+  }
+
+  .left-side, .right-side, .form-container {
+    margin-left: 0;
+  }
+
+  .h2style {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+}

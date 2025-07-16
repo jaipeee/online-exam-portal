@@ -6,12 +6,84 @@
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
     margin-left: 260px; /* Adjust this based on the sidebar width */
+    transition: all 0.3s;
+}
+
+.student-dashboard h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.student-dashboard p {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.subject-list {
+    margin-top: 20px;
+}
+
+.subject-list h3 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.subject-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 400px;
+}
+
+.subject-list li {
+    background: #f8f9fa;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    font-size: 1rem;
+    text-align: center;
+}
+
+button {
+    display: block;
+    margin: 25px auto 0 auto;
+    padding: 12px 24px;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+@media (max-width: 1200px) {
+    .student-dashboard {
+        margin-left: 180px;
+        max-width: 95%;
+        padding: 18px;
+    }
 }
 
 @media (max-width: 992px) {
     .student-dashboard {
         margin-left: 0;
-        max-width: 95%;
+        max-width: 98%;
+        padding: 15px;
+    }
+    .student-dashboard h2 {
+        font-size: 1.6rem;
+    }
+    .subject-list h3 {
+        font-size: 1.1rem;
     }
 }
 
@@ -21,11 +93,43 @@
         padding: 10px;
         max-width: 100%;
     }
+    .student-dashboard h2 {
+        font-size: 1.3rem;
+    }
+    .subject-list h3 {
+        font-size: 1rem;
+    }
+    .subject-list ul {
+        max-width: 100%;
+    }
+    .subject-list li {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+    button {
+        font-size: 0.95rem;
+        padding: 10px 18px;
+    }
 }
 
 @media (max-width: 576px) {
     .student-dashboard {
         margin: 10px auto;
         padding: 5px;
+        max-width: 100%;
+    }
+    .student-dashboard h2 {
+        font-size: 1.1rem;
+    }
+    .subject-list h3 {
+        font-size: 0.95rem;
+    }
+    .subject-list li {
+        font-size: 0.9rem;
+        padding: 6px;
+    }
+    button {
+        font-size: 0.9rem;
+        padding: 8px 12px;
     }
 }

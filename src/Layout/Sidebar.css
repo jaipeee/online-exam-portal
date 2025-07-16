@@ -5,10 +5,16 @@
     padding: 20px;
     position: fixed;
     height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    transition: width 0.3s, padding 0.3s;
   }
   
   .sidebar h2 {
     text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
   }
   
   .sidebar nav {
@@ -23,8 +29,65 @@
     padding: 10px;
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1rem;
+    transition: background 0.3s;
   }
   
   .sidebar a.active {
     background: #1abc9c;
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 1200px) {
+    .sidebar {
+        width: 180px;
+        padding: 12px;
+    }
+    .sidebar h2 {
+        font-size: 1.2rem;
+    }
+    .sidebar a {
+        font-size: 0.95rem;
+        padding: 8px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 10px 0;
+        box-shadow: none;
+    }
+    .sidebar h2 {
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+    .sidebar nav {
+        flex-direction: row;
+        gap: 5px;
+        justify-content: center;
+    }
+    .sidebar a {
+        font-size: 0.9rem;
+        padding: 7px 12px;
+        margin: 0 2px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .sidebar {
+        padding: 5px 0;
+    }
+    .sidebar h2 {
+        font-size: 0.95rem;
+    }
+    .sidebar nav {
+        gap: 3px;
+    }
+    .sidebar a {
+        font-size: 0.85rem;
+        padding: 6px 8px;
+    }
   }

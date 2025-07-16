@@ -5,10 +5,11 @@ import Sidebar from "./Sidebar";
 function Layout({ children }) {
   const location = useLocation();
   const isStudentRoute = location.pathname.startsWith("/student");
+  const isAdminRoute = location.pathname.startsWith("/admin");
 
   return (
     <div className="layout">
-      <Navbar />
+      {isAdminRoute && <Navbar />}
       {isStudentRoute && <Sidebar />}
       <div className="content">{children}</div>
     </div>

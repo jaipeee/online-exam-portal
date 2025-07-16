@@ -71,6 +71,24 @@ button:hover {
   margin-left: 20px;
   padding: 100px;
 }
+@media (max-width: 1200px) {
+  .form-container {
+    width: 95%;
+  }
+  .left-side, .right-side {
+    padding: 60px;
+  }
+}
+
+@media (max-width: 992px) {
+  .form-container {
+    width: 100%;
+  }
+  .left-side, .right-side {
+    padding: 40px;
+  }
+}
+
 @media (max-width: 768px) {
   .student-login-container {
     align-items: center;
@@ -98,5 +116,31 @@ button:hover {
   .h2style {
     font-size: 18px;
     padding: 10px 0;
+  }
+}
+
+@media (max-width: 576px) {
+  .student-login-container {
+    padding: 10px;
+    height: auto;
+  }
+  .form-container {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+    padding: 0;
+  }
+  .left-side, .right-side {
+    width: 100%;
+    margin: 5px 0;
+    padding: 10px;
+  }
+  .h2style {
+    font-size: 16px;
+    padding: 8px 0;
+  }
+  input, button {
+    font-size: 0.95rem;
+    padding: 8px;
   }
 }

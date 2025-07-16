@@ -84,3 +84,90 @@
     text-align:right;
     font-size: 20px;
 }
+
+@media (max-width: 1200px) {
+    .dashboard-header {
+        font-size: 1.5rem;
+        margin-left: 180px;
+    }
+    .dashboard-content {
+        margin-left: 180px;
+    }
+    .indian-time {
+        margin-right: 180px;
+    }
+}
+
+@media (max-width: 992px) {
+    .dashboard-header {
+        font-size: 1.2rem;
+        margin-left: 0;
+    }
+    .dashboard-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    .dashboard-content h1 {
+        font-size: 2rem;
+    }
+    .dashboard-h2 {
+        font-size: 36px;
+        margin-right: 5%;
+    }
+    .indian-time {
+        margin-right: 0;
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-header {
+        font-size: 1rem;
+        padding: 3px;
+    }
+    .dashboard-content {
+        margin-top: 70px;
+        padding: 10px;
+    }
+    .dashboard-content h1 {
+        font-size: 1.5rem;
+    }
+    .dashboard-h2 {
+        font-size: 24px;
+        margin-right: 0;
+    }
+    .student-name,
+    .student-email,
+    .student-joined,
+    .student-subjects {
+        font-size: 1rem;
+    }
+    .indian-time {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 576px) {
+    .dashboard-header {
+        font-size: 0.9rem;
+        padding: 2px;
+    }
+    .dashboard-content {
+        margin-top: 50px;
+        padding: 5px;
+    }
+    .dashboard-content h1 {
+        font-size: 1.1rem;
+    }
+    .dashboard-h2 {
+        font-size: 18px;
+    }
+    .student-item {
+        padding: 8px;
+        font-size: 0.95rem;
+    }
+    .indian-time {
+        font-size: 14px;
+        padding-bottom: 10px;
+    }
+}

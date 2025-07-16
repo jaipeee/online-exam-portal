@@ -57,3 +57,49 @@ select {
   font-weight: bold;
   color: green;
 }
+
+@media (max-width: 1200px) {
+  .assessment-container {
+    padding-left: 100px;
+    padding-right: 20px;
+  }
+}
+
+@media (max-width: 992px) {
+  .assessment-container {
+    padding: 30px 10px 30px 10px;
+  }
+  .question-list {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .assessment-container {
+    padding: 10px;
+  }
+  .assessment-container h2 {
+    font-size: 22px;
+  }
+  .dropdowns {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .question-card {
+    padding: 10px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .assessment-container {
+    padding: 5px;
+  }
+  .assessment-container h2 {
+    font-size: 18px;
+  }
+  .question-card {
+    padding: 6px;
+    font-size: 0.9rem;
+  }
+}

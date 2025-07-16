@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { auth, database } from "../../config/firebaseConfig";  
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
-import { ref, get } from "firebase/database"; // Import from Firebase Realtime Database
+import { ref, get } from "firebase/database"; 
 import { useNavigate } from "react-router-dom";
 import "../../styles/StudentDashboard.css"; 
 
@@ -19,7 +19,7 @@ function StudentDashboard() {
         await fetchUserName(user.uid);
         await fetchSubjects(user.uid);
       } else {
-        navigate("/StudentLogin"); // Redirect to login if not authenticated
+        navigate("/StudentLogin"); 
       }
     });
 
@@ -48,7 +48,7 @@ function StudentDashboard() {
       const snapshot = await get(subjectsRef);
       if (snapshot.exists()) {
         const data = snapshot.val();
-        const subjectsList = Object.keys(data);  // Fix: get subject names as keys
+        const subjectsList = Object.keys(data);  
         setSubjects(subjectsList);
       } else {
         setSubjects([]);

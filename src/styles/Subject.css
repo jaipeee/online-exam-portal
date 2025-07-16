@@ -64,3 +64,50 @@ ul li {
     border: 1px solid #ddd;
     font-size: 1rem;
 }
+
+/* Responsive styles */
+@media (max-width: 1200px) {
+    .subject-content {
+        width: 80%;
+        max-width: 600px;
+    }
+}
+
+@media (max-width: 768px) {
+    .subject-content {
+        width: 95%;
+        padding: 10px;
+        margin: 30px auto;
+    }
+    h2 {
+        font-size: 1.3rem;
+        margin-bottom: 12px;
+    }
+    select, input, button {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    ul li {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .subject-content {
+        width: 100%;
+        padding: 5px;
+        margin: 10px auto;
+    }
+    h2 {
+        font-size: 1.1rem;
+    }
+    select, input, button {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+    ul li {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}

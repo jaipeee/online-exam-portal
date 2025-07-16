@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-import { auth, db } from "../../config/firebaseConfig"; 
+import { auth, db } from "../../config/firebaseConfig";
 import { getDatabase, ref, get } from "firebase/database";
-import "../../styles/StudentResult.css"; // Ensure you create this CSS file
+import "../../styles/StudentResult.css";
 
 function StudentResult() {
   const [user, setUser] = useState(null);
@@ -30,27 +30,21 @@ function StudentResult() {
       if (snapshot.exists()) {
         let resultArray = [];
         let totalQuestions = 0, attemptedQuestions = 0, correctAnswers = 0;
-
         snapshot.forEach((subjectSnapshot) => {
           let subject = subjectSnapshot.key;
           let subjectData = subjectSnapshot.val();
-
           if (subjectData && typeof subjectData === "object") {
             let { total = 0, attempted = 0, correct = 0 } = subjectData;
             totalQuestions += total;
             attemptedQuestions += attempted;
             correctAnswers += correct;
-
             resultArray.push({ subject, total, attempted, correct });
           }
         });
-
         setResults(resultArray);
-
         if (totalQuestions > 0) {
           let percentage = (correctAnswers / totalQuestions) * 100;
           let grade = getGrade(percentage);
-
           setOverallStats({
             totalQuestions,
             attemptedQuestions,
@@ -82,7 +76,6 @@ function StudentResult() {
     <div className="h2">
       <h2>Your Exam Results</h2>
     <div className="result-container">
-
       {results.length > 0 ? (
         <>
           {results.map((res, index) => (
@@ -94,7 +87,6 @@ function StudentResult() {
               <p>Score: {res.correct} / {res.total}</p>
             </div>
           ))}
-
           {overallStats && (
             <div className="result-box overall">
               <h3>Overall Performance</h3>
@@ -108,7 +100,6 @@ function StudentResult() {
       ) : (
         <p>No results available.</p>
       )}
-
       <button className="logout-btn" onClick={() => signOut(auth).then(() => (window.location.href = "/login"))}>
         Logout
       </button>

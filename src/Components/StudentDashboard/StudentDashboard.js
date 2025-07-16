@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { auth, database } from "../../config/firebaseConfig";  
+import { auth, database } from "../../config/firebaseConfig";
 import { doc, getDoc, collection, getDocs } from "firebase/firestore";
-import { ref, get } from "firebase/database"; 
+import { ref, get } from "firebase/database";
 import { useNavigate } from "react-router-dom";
-import "../../styles/StudentDashboard.css"; 
+import "../../styles/StudentDashboard.css";
 
 function StudentDashboard() {
   const [user, setUser] = useState(null);
-  const [userName, setUserName] = useState("");  
-  const [userEmail, setUserEmail] = useState(""); 
+  const [userName, setUserName] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const [subjects, setSubjects] = useState([]);
   const navigate = useNavigate();
 
@@ -19,7 +19,7 @@ function StudentDashboard() {
         await fetchUserName(user.uid);
         await fetchSubjects(user.uid);
       } else {
-        navigate("/StudentLogin"); 
+        navigate("/StudentLogin");
       }
     });
 
@@ -48,7 +48,7 @@ function StudentDashboard() {
       const snapshot = await get(subjectsRef);
       if (snapshot.exists()) {
         const data = snapshot.val();
-        const subjectsList = Object.keys(data);  
+        const subjectsList = Object.keys(data);
         setSubjects(subjectsList);
       } else {
         setSubjects([]);
@@ -66,7 +66,6 @@ function StudentDashboard() {
     <div className="student-dashboard">
       <h2>Welcome, {userName || "Student"}!</h2>
       <p>Email: {userEmail || "Not available"}</p>
-      
       <div className="subject-list">
         <h3>Your Subjects</h3>
         <ul>
@@ -77,7 +76,6 @@ function StudentDashboard() {
           )}
         </ul>
       </div>
-
       <button onClick={logout}>Logout</button>
     </div>
   );

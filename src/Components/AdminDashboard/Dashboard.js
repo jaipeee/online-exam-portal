@@ -53,13 +53,10 @@ function Dashboard() {
   return (
     <Layout>
       <div className="dashboard-container">
-        {/* Header */}
         <div className="dashboard-header">
           <h2 className="dashboard-h2">Online Examination Portal</h2>
           <p className="indian-time">Current Indian Time: {currentTime}</p>
         </div>
-
-        {/* Dashboard Content */}
         <div className="dashboard-content">
           <h1>Welcome to the Admin Dashboard</h1>
           <h2>Logged-in Students:</h2>

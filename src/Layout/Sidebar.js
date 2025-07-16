@@ -3,12 +3,8 @@ import "./Sidebar.css";
 
 function Sidebar() {
   const location = useLocation();
-
-  // Show sidebar only for student routes
   const isStudentRoute = location.pathname.startsWith("/student");
-
-  if (!isStudentRoute) return null; // Hide for non-student routes (admin, etc.)
-
+  if (!isStudentRoute) return null;
   return (
     <div className="sidebar">
       <h2>Student Panel</h2>

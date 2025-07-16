@@ -53,7 +53,6 @@ function Assessment() {
     fetchQuestions();
   }, [selectedSubject, selectedStudent]);
 
-  // Handle delete question
   const handleDeleteQuestion = async (questionId) => {
     if (!selectedStudent || !selectedSubject) return;
     const questionRef = ref(database, `students/${selectedStudent}/mcqs/${selectedSubject}/${questionId}`);
@@ -62,11 +61,9 @@ function Assessment() {
     alert("Question deleted successfully!");
   };
 
-  // Handle edit question
   const handleEditQuestion = async (questionId, oldQuestion) => {
     const newQuestion = prompt("Edit question:", oldQuestion);
     if (!newQuestion || newQuestion === oldQuestion) return;
-
     if (!selectedStudent || !selectedSubject) return;
     const questionRef = ref(database, `students/${selectedStudent}/mcqs/${selectedSubject}/${questionId}`);
     await update(questionRef, { question: newQuestion });
@@ -80,7 +77,6 @@ function Assessment() {
     <Layout>
       <div className="assessment-container">
         <h2>📝 Assessment Viewer</h2>
-
         <div className="dropdowns">
           <select onChange={(e) => setSelectedStudent(e.target.value)} defaultValue="">
             <option value="">Select Student</option>
@@ -88,7 +84,6 @@ function Assessment() {
               <option key={s.id} value={s.id}>{s.name}</option>
             ))}
           </select>
-
           <select onChange={(e) => setSelectedSubject(e.target.value)} defaultValue="">
             <option value="">Select Subject</option>
             {subjects.map((subject, idx) => (
@@ -98,7 +93,6 @@ function Assessment() {
             ))}
           </select>
         </div>
-
         <div className="question-list">
           {questions.length > 0 ? (
             questions.map((q, i) => (
@@ -109,17 +103,12 @@ function Assessment() {
                     <li key={idx}>{idx + 1}. {opt}</li>
                   ))}
                 </ul>
-                
-                {/* Display correct answer */}
                 <p className="correct-answer">✔ Correct Answer: {q.correctAnswer}</p>
-
-                {/* Display the student's selected answer */}
                 {q.selectedAnswer ? (
                   <p className="student-answer">Selected Answer: {q.selectedAnswer}</p>
                 ) : (
                   <p className="student-answer">No answer selected</p>
                 )}
-
                 <button onClick={() => handleEditQuestion(q.id, q.question)} style={{ marginRight: "10px" }}>Edit</button>
                 <button onClick={() => handleDeleteQuestion(q.id)} style={{ color: "red" }}>Delete</button>
               </div>

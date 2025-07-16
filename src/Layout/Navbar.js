@@ -6,12 +6,11 @@ function Layout({ children }) {
   const navigate = useNavigate();
 
   function logout() {
-    auth.signOut().then(() => navigate("/")); // Redirect to HomePage.js
+    auth.signOut().then(() => navigate("/"));
   }
 
   return (
     <div className="layout">
-      {/* Sidebar */}
       <div className="sidebar">
         <h2>Dashboard</h2>
         <nav>

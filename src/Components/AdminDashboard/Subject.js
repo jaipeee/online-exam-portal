@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { database } from "../../config/firebaseConfig";
 import { ref, get, update, remove } from "firebase/database";
-import "../../styles/Subject.css"; 
+import "../../styles/Subject.css";
 import Layout from "../../Layout/Layout";
 import Navbar from "../../Layout/Navbar";
 
@@ -29,10 +29,8 @@ function Subject() {
       if (!selectedStudent) return;
       const subjectsRef = ref(database, `students/${selectedStudent}/subjects`);
       const snapshot = await get(subjectsRef);
-      
       const studentData = snapshot.val();
-      const subjectList = studentData ? Object.keys(studentData) : []; 
-      
+      const subjectList = studentData ? Object.keys(studentData) : [];
       setStudentSubjects(subjectList);
     }
     fetchSubjects();
@@ -43,13 +41,10 @@ function Subject() {
       alert("Please select a student and enter a subject.");
       return;
     }
-
     const studentRef = ref(database, `students/${selectedStudent}/subjects`);
-    
     await update(studentRef, {
       [subject]: true,
     });
-
     alert("Subject assigned successfully!");
     setSubject("");
     setStudentSubjects((prevSubjects) => [...prevSubjects, subject]);
@@ -57,30 +52,24 @@ function Subject() {
 
   async function handleDeleteSubject(subjectToDelete) {
     if (!selectedStudent || !subjectToDelete) return;
-
     const subjectRef = ref(database, `students/${selectedStudent}/subjects/${subjectToDelete}`);
-    await remove(subjectRef); // Correct deletion function
-
+    await remove(subjectRef);
     setStudentSubjects((prevSubjects) => prevSubjects.filter(subj => subj !== subjectToDelete));
     alert("Subject deleted successfully!");
   }
 
   async function handleEditSubject(oldSubject) {
     if (!selectedStudent || !oldSubject) return;
-
     const newSubject = prompt("Enter the new subject name:", oldSubject);
     if (!newSubject || newSubject.trim() === "" || newSubject === oldSubject) return;
-
     const studentSubjectsRef = ref(database, `students/${selectedStudent}/subjects`);
     const snapshot = await get(studentSubjectsRef);
     const subjectsData = snapshot.val();
-
     if (subjectsData) {
       delete subjectsData[oldSubject];
       subjectsData[newSubject] = true;
       await update(studentSubjectsRef, subjectsData);
     }
-
     setStudentSubjects((prevSubjects) =>
       prevSubjects.map((subj) => (subj === oldSubject ? newSubject : subj))
     );
@@ -100,16 +89,14 @@ function Subject() {
               <option key={student.id} value={student.id}>{student.name}</option>
             ))}
           </select>
-
           <input type="text" placeholder="Enter Subject" value={subject} onChange={(e) => setSubject(e.target.value)} />
           <button onClick={handleAddSubject}>Add Subject</button>
-
           <h3>Assigned Subjects</h3>
           <ul>
             {studentSubjects.length > 0 ? (
               studentSubjects.map((subj, index) => (
                 <li key={index}>
-                  {subj} 
+                  {subj}
                   <button onClick={() => handleEditSubject(subj)} style={{ marginLeft: "10px", color: "blue" }}>Edit</button>
                   <button onClick={() => handleDeleteSubject(subj)} style={{ marginLeft: "10px", color: "red" }}>Delete</button>
                 </li>

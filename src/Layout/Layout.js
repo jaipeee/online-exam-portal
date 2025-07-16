@@ -1,6 +1,6 @@
 import { useLocation } from "react-router-dom";
 import Navbar from "./Navbar";
-import Sidebar from "./Sidebar"; // Import Sidebar
+import Sidebar from "./Sidebar";
 
 function Layout({ children }) {
   const location = useLocation();
@@ -9,7 +9,7 @@ function Layout({ children }) {
   return (
     <div className="layout">
       <Navbar />
-      {isStudentRoute && <Sidebar />} {/* Sidebar only for students */}
+      {isStudentRoute && <Sidebar />}
       <div className="content">{children}</div>
     </div>
   );

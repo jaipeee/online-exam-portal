@@ -97,8 +97,8 @@ function Subject() {
               studentSubjects.map((subj, index) => (
                 <li key={index}>
                   {subj}
-                  <button onClick={() => handleEditSubject(subj)} style={{ marginLeft: "10px", color: "blue" }}>Edit</button>
-                  <button onClick={() => handleDeleteSubject(subj)} style={{ marginLeft: "10px", color: "red" }}>Delete</button>
+                  <button className="sybbtn" onClick={() => handleEditSubject(subj)} style={{ marginLeft: "10px", color: "blue" }}>Edit</button>
+                  <button className="sybbtn" onClick={() => handleDeleteSubject(subj)} style={{ marginLeft: "10px", color: "red" }}>Delete</button>
                 </li>
               ))
             ) : (

@@ -76,7 +76,7 @@ function StudentDashboard() {
           )}
         </ul>
       </div>
-      <button onClick={logout}>Logout</button>
+      <button className="stdbtn" onClick={logout}>Logout</button>
     </div>
   );
 }

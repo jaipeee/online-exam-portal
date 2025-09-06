@@ -48,7 +48,7 @@
     text-align: center;
 }
 
-button {
+.stdbtn {
     display: block;
     margin: 25px auto 0 auto;
     padding: 12px 24px;
@@ -61,7 +61,7 @@ button {
     transition: background 0.3s;
 }
 
-button:hover {
+.stdbtn:hover {
     background: #0056b3;
 }
 

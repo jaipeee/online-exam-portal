@@ -21,7 +21,7 @@ label {
     margin-top: 10px;
 }
 
-select, input {
+.subject-select {
     width: 100%;
     padding: 12px;
     margin: 5px 0;
@@ -30,7 +30,16 @@ select, input {
     font-size: 1rem;
 }
 
-button {
+.subject-input {
+    width: 100%;
+    padding: 12px;
+    margin: 5px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+.subject-button {
     width: 100%;
     background: #007bff;
     color: white;
@@ -43,11 +52,11 @@ button {
     transition: background 0.3s ease-in-out;
 }
 
-button:hover {
+.subject-button:hover {
     background: #0056b3;
 }
 
-button:focus {
+.subject-button:focus {
     outline: 3px solid rgba(0, 123, 255, 0.5); /* Improve accessibility */
 }
 
@@ -83,7 +92,9 @@ ul li {
         font-size: 1.3rem;
         margin-bottom: 12px;
     }
-    select, input, button {
+    .subject-select,
+    .subject-input,
+    .subject-button {
         font-size: 0.95rem;
         padding: 10px;
     }
@@ -102,7 +113,9 @@ ul li {
     h2 {
         font-size: 1.1rem;
     }
-    select, input, button {
+    .subject-select,
+    .subject-input,
+    .subject-button {
         font-size: 0.9rem;
         padding: 8px;
     }

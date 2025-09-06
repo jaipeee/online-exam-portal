@@ -1,9 +1,9 @@
 .subject-container {
-    height: 100vh; /* Full viewport height */
-    overflow-y: auto; /* Enable scrolling if content overflows */
+    height: 100vh; 
+    overflow-y: auto;
     
     padding: 200px;
-    background-color: #f8f9fa; /* Light background for better visibility */
+    background-color: #f8f9fa; 
     box-sizing: border-box;
 
     border-radius: 10px;

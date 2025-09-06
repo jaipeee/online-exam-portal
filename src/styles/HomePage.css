@@ -1,0 +1,72 @@
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+.app {
+  text-align: center;
+  min-height: 100vh;
+  transition: background 0.5s, color 0.5s;
+  padding: 2em;
+}
+
+.dark {
+  background-color: black;
+  color: white;
+}
+
+.light {
+  background-color: white;
+  color: black;
+}
+
+.title {
+  font-size: 4em;
+  text-shadow: 0em 0em 0.8em white;
+}
+
+
+
+.square {
+  width: 15em;
+ margin: 300px 50px 150px 100px;
+  height: 10em;
+  border-radius: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  box-shadow: 0em 0em 5em white;
+  transition: 0.5s ease-in-out;
+  cursor: pointer;
+  font-size: 1.5em;
+}
+
+.square:hover {
+  transform: scale(1.1);
+  box-shadow: 0em 0em 10em white;
+}
+
+.light .square {
+  background-color: white;
+  color: black;
+  box-shadow: 0em 0em 5em black;
+}
+
+.light .square:hover {
+  box-shadow: 0em 0em 10em black;
+}
+
+.icons {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  gap: 2em;
+  cursor: pointer;
+}
+
+.about {
+  margin-top: 3em;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}

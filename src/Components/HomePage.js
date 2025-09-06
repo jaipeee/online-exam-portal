@@ -13,8 +13,8 @@ const [darkMode, setDarkMode] = useState(true);
     <div className={`app ${darkMode ? "dark" : "light"}`}>
       <h1 className="title">Welcome to Online Examination Portal</h1>
 
-      <button  className="square" onClick={() => navigate("/student/login")} style={styles.button}>Student Login</button>
-        <button  className="square" onClick={() => navigate("/admin/login")} style={styles.button}>Admin Login</button>
+      <button  className="square" onClick={() => navigate("/student/login")} >Student Login</button>
+        <button  className="square" onClick={() => navigate("/admin/login")} >Admin Login</button>
 
       <div className="icons">
         <svg
@@ -40,45 +40,35 @@ const [darkMode, setDarkMode] = useState(true);
         </svg>
       </div>
 
-      <section className="about">
+     <section className="about">
         <h2>About Me</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus
-          fermentum, lorem eu cursus elementum, magna sapien scelerisque arcu,
-          vel posuere justo velit sed leo. Integer posuere, lacus ac pretium
-          suscipit, felis augue luctus est, nec sagittis justo odio non erat.
+          Hi, my name is <strong>Jaipratap Raj</strong>.  
+          This project is called <strong>Online Examination Portal</strong>, which I built as my final year project at  
+          <strong> SRM Institute of Science and Technology</strong>.  
+        </p>
+        <p>
+          The portal is developed using <strong>React</strong> for the frontend, and <strong>Firebase</strong> for
+          authentication and database management. It allows students to <strong>sign up, log in, and take exams</strong> online in a secure way. 
+          The project is currently <strong>being used in institutions</strong> to conduct examinations digitally.
+        </p>
+        <p className="p-tag">
+          Some key features include:
+          <ul className="homepage-ul">
+            <li>Secure student authentication with Firebase</li>
+            <li>User-friendly UI built with React</li>
+            <li>Real-time database updates for exams and results</li>
+            <li>Scalable cloud-based backend</li>
+          </ul>
+        </p>
+        <p>
+          This project represents a step towards <strong>modernizing examination systems</strong> with technology and 
+          ensuring accessibility for students and institutions alike.
         </p>
       </section>
     </div>
 
   );
 }
-
-const styles = {
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
-    height: "100vh",
-    backgroundColor: "#f4f4f4",
-  },
-  heading: {
-    marginBottom: "30px",
-  },
-  buttonContainer: {
-    display: "flex",
-    gap: "20px",
-  },
-  button: {
-    padding: "15px 30px",
-    fontSize: "18px",
-    cursor: "pointer",
-    borderRadius: "5px",
-    border: "none",
-    backgroundColor: "#007bff",
-    color: "white",
-  },
-};
 
 export default HomePage;
